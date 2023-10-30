@@ -2,10 +2,6 @@ FROM python:3.10
 
 WORKDIR /python-code
 
-# COPY requirements.txt .
+COPY ./app.py .
 
-# RUN pip install -r requirements.txt
-
-# COPY . .
-
-CMD ["python", "app.py"]
+CMD ["python", "./app.py"]
