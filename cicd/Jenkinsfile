@@ -8,22 +8,22 @@ pipeline {
                 git 'https://github.com/txhanh/jenkins.git'
 
                 // Build a Docker image for your application
-                // docker build -t <your-image-name> .
+                docker build -t my-python-app .
 
                 // Push the Docker image to Docker Hub
                 // docker push <your-image-name>
 
-                echo 'Hello-World'
+                echo 'Hello-World from Build Stage'
             }
         }
 
         stage('Test') {
             steps {
                 // Run your unit tests
-                echo 'hi ne'
+                echo 'hi ne, from Test Stage'
 
                 // Test the deployment
-                sh './test_deployment.py'
+                // sh './test_deployment.py'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 // Deploy your Docker image to production
                 // docker run -d --name <your-container-name> <your-image-name>
-                echo 'This is test from Deployments'
+                echo 'This is test from Deployments Stage'
             }
         }
     }
