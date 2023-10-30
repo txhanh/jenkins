@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Clone your code from GitHub
+                git 'https://github.com/txhanh/jenkins.git'
+
+                // Build a Docker image for your application
+                // docker build -t <your-image-name> .
+
+                // Push the Docker image to Docker Hub
+                // docker push <your-image-name>
+
+                echo 'Hello-World'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run your unit tests
+                echo 'hi ne'
+
+                // Test the deployment
+                sh './test_deployment.py'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy your Docker image to production
+                // docker run -d --name <your-container-name> <your-image-name>
+                echo 'This is test from Deployments'
+            }
+        }
+    }
+}
