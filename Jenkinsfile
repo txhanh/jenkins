@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f cicd/Dockerfile .'
+        sh 'docker build . -t flask:1.0 -f cicd/Dockerfile'
       }
     }
 
