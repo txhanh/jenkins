@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Login to DockerHub') {
+      steps {
+        sh 'docker login -u $DOCK_USER -p $DOCKER_PASSWORD'
+      }
+    }
+
   }
 }
