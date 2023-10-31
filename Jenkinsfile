@@ -29,5 +29,11 @@ pipeline {
       }
     }
 
+    stage('Docker Tag') {
+      steps {
+        sh 'docker tag flask:2.0 hankxyzt/app-flask:2.0'
+      }
+    }
+
   }
 }
