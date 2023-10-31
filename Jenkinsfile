@@ -35,5 +35,11 @@ pipeline {
       }
     }
 
+    stage('Docker Push') {
+      steps {
+        sh 'docker push hankxyzt/app-flask:1.0'
+      }
+    }
+
   }
 }
