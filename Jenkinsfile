@@ -37,7 +37,7 @@ pipeline {
 
     stage('Docker Push') {
       steps {
-        sh 'docker push hankxyzt/app-flask:1.0'
+        sh 'docker push hankxyzt/app-flask:2.0'
       }
     }
 
